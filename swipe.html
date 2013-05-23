@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Mobile Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head>
+
+<body data-dave="red">
+
+<div data-role="page" id="swipe1">
+
+    <div data-role="header" data-id="navbar" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html#homePage">Info</a></li>
+                <li><a href="index.html#SecondPage">Friends</a></li>
+                <li><a href="#swipe1">Swipe 1</a></li>
+                <li><a href="#swipe2">Swipe 2</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div>
+
+    <div id='swipeResults'>
+
+    </div>
+    <p>
+   Swipe 1 Content
+    </p>
+</div>
+
+<div data-role="page" id="swipe2">
+
+    <div data-role="header" data-id="navbar" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html#homePage">Info</a></li>
+                <li><a href="index.html#SecondPage">Friends</a></li>
+                <li><a href="#swipe1">Swipe 1</a></li>
+                <li><a href="#swipe2">Swipe 2</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div>
+    <p>
+
+    Swipe 2 content
+    </p>
+    <div id='swipeResults'>
+
+    </div>
+</div>
+
+
+<div data-role="footer">
+    <i>Copyright Lockersoft &copy; 2012</i>
+</div>
+
+</div>
+<script>
+    $(document).ready(function(){
+
+        $(window).bind("orientationchange", function(event){
+            $('#swipeResults').append("<p>Orientation changed to" + event.orientation + "</p>");
+        });
+
+        $("body").bind("swipe", function(event){
+            $('#swipeResults').append("Some type of swipe happened.");
+        });
+
+        $("body").bind("swipeleft swiperight", function(event){
+            var dir = event.type;
+            var page = $.mobile.activePage[0];
+            $('#swipeResults').append("<p>You swiped in the: " + dir + ".</p>");
+            if( dir == "swiperight" && page.id == "swipe1")
+                $.mobile.changePage("#swipe2");
+            else
+                $.mobile.changePage("#swipe1");
+
+        });
+
+
+        $("body").bind("scrollstart",function(event){
+            $('#swipeResults').append("Scroll Started.");
+        });
+
+        $("body").bind("scrollstop",function(event){
+            $('#swipeResults').append("Scroll Stopped.");
+        });
+
+        $("#swipeResults").on("tap", function(event){
+            $(event.target).css("background-color", "red");
+        });
+
+        $("#swipeResults").on("taphold", function(event){
+            $(event.target).css("background-color", "blue");
+        });
+    })
+</script>
+</body>
+</html>

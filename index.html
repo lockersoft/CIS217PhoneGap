@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Mobile Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+</head>
+
+<body data-dave="red">
+
+<div data-role="page" id="homePage">
+
+    <div data-role="header" data-id="navbar" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homePage" class="ui-btn-active ui-state-persist">Info</a></li>
+                <li><a href="#SecondPage">Friends</a></li>
+                <li><a href="#ThirdPage">Order</a></li>
+                <li><a href="#swipe1">Map</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+
+    Welcome to our first mobile web site.<br/>
+    <a href="tel:555-555-5555" data-role="button">555-555-5555</a>
+    <a href="sms://555-555-5555?body=hello%20dave" data-role="button">Order Pizza Now</a>
+    <a href="mailto:dave@lockersoft.com?subject=Hello%20dave&body=what%20are%20you%20doing" data-role="button">Order Pizza Now</a>
+    </p>
+    <div data-role="footer" data-position="fixed">
+        <i>Copyright Lockersoft &copy; 2012</i>
+    </div>
+
+</div>
+
+
+<div data-role="page" id="SecondPage">
+
+    <div data-role="header" data-id="navbar" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homePage">Info</a></li>
+                <li><a href="#SecondPage" class="ui-btn-active ui-state-persist">Friends</a></li>
+                <li><a href="#ThirdPage">Order</a></li>
+                <li><a href="#map">Map</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+
+
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-native-menu="false" data-split-theme="d" data-split-icon="delete" data-filter="true" data-filter-placeholder="Search ...">
+            <li><a href="#dave"><img class="ui-li-icon" src="http://placeimg.com/16/16/people"/> Dave</a>
+                   </li>
+            <li><a href="tom.html" rel="external">Tom</a></li>
+            <li><a href="scott.html">Scott</a></li>
+            <li data-role="list-divider">Non-Friends</li>
+            <li><a href="scott.html">Scott</a></li>
+            <li><a href="scott.html">Scott</a></li>
+        </ul>
+        <p>
+            This is content
+        </p>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <i>Copyright Lockersoft &copy; 2012</i>
+    </div>
+
+</div>
+
+<div data-role="page" id="ThirdPage">
+
+    <div data-role="header" data-id="navbar" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homePage">Info</a></li>
+                <li><a href="#SecondPage">Friends</a></li>
+                <li><a href="#ThirdPage" class="ui-btn-active ui-state-persist">Order</a></li>
+                <li><a href="#map">Map</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+
+    <div data-role="content">
+        <div data-product="2120" class="product">
+            <span data-name='skiis'>Skiis</span>
+            <span data-price='199.95'>199.95</span>
+            <span class='description'>Boards of Death to race your friends downhill</span>
+        </div>
+
+        <div data-product="1120" class="product">
+            <span data-name='boots'>Boots</span>
+            <span data-price='49.95'>49.95</span>
+            <span class='description'>Comfortable boots to ski with your friends</span>
+        </div>
+
+        <div data-product="3120" class="product">
+            <span data-name='poles'>Poles</span>
+            <span data-price='19.95'>19.95</span>
+            <span class='description'>Sticks to keep you from falling</span>
+        </div>
+
+        <div id='cartDiv'>
+
+        </div>
+        <div>
+            <p><button id="buy">Buy Now</button></p>
+        </div>
+        <div>
+            <button id="saveOrder">Save Order</button>
+        </div>
+        <div>
+            <button id="loadOrder">Load Order</button>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <i>Copyright Lockersoft &copy; 2012</i>
+    </div>
+
+</div>
+
+<div data-role="page" id="dave">
+
+    <div data-role="header" data-id="navbar" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homePage">Info</a></li>
+                <li><a href="#SecondPage">Friends</a></li>
+                <li><a href="#ThirdPage" class="ui-btn-active ui-state-persist">Order</a></li>
+                <li><a href="#map">Map</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+
+    <div data-role="content">
+        <p>
+            This is Dave's Page.
+        </p>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <i>Copyright Lockersoft &copy; 2012</i>
+    </div>
+
+</div>
+
+
+<div data-role="page" id="map">
+
+    <div data-role="header" data-id="navbar" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homePage">Info</a></li>
+                <li><a href="#SecondPage">Friends</a></li>
+                <li><a href="#ThirdPage">Order</a></li>
+                <li><a href="#map" class="ui-btn-active ui-state-persist">Map</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+
+    <div data-role="content">
+        <p>
+           <script>
+               navigator.geolocation.getCurrentPosition(function(pos){
+                   var lat = pos.coords.latitude;
+                   var lng = pos.coords.longitude;
+                   console.log( lat + " : " + lng);
+                   $("#lat").text( lat );
+                   $("#lng").text( lng );
+                  // var url = '<a href="http://maps.google.com/maps?q=' + lat + ',' + lng + '">Your Location</a>';
+                   // saddr=???&daddr=????
+                //   https://maps.google.com/maps?daddr=Pizza+Hut,+3304+N.+Nevada,+Spokane,+WA+99207+(Pizza+Hut)&hl=en&sll=47.689255,-117.390461&sspn=0.046048,0.048065&geocode=CXQaZiTkposfFQyr1wIdZLEA-Q&t=h&mra=ls&z=14
+
+                  var url = '<a href="http://maps.google.com/maps?daddr=Pizza+Hut,+3304+N.+Nevada,+Spokane,+WA+99207&saddr=' + lat + ',' + lng + '">Your Location</a>';
+                   $("#url").html( url );
+
+                   var map = '<iframe width="360" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ' +
+                           'src="https://maps.google.com/maps?daddr=Pizza+Hut,+3304+N.+Nevada,+Spokane,+WA+99207&amp;saddr=' + lat + ',' + lng +
+                           '&amp;ie=UTF8&amp;t=h&amp;ll=47.67371,-117.410545&amp;spn=0.020806,0.030813&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?daddr=Pizza+Hut,+3304+N.+Nevada,+Spokane,+WA+99207&amp;saddr=47.65878000000001,-117.426047&amp;ie=UTF8&amp;t=h&amp;ll=47.67371,-117.410545&amp;spn=0.020806,0.030813&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+                   $("#directionMap").html(map);
+               })
+           </script>
+          Latitude: <span id="lat"></span><br/>
+          Longitude: <span id="lng"></span>
+          Url: <span id="url"></span>
+
+          Display Actual Map Here!
+          <div id="directionMap">
+
+          </div>
+        </p>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <i>Copyright Lockersoft &copy; 2012</i>
+    </div>
+
+</div>
+
+<script>
+    var cart = [];
+
+    function displayCart(){
+        var cartDiv = $('#cartDiv');
+        cartDiv.html("");
+        var grandTotal = 0;
+        for(var item in cart){
+            var qty = cart[item].qty;
+            var price = cart[item].price;
+            var subtotal = qty * price;
+            grandTotal += subtotal;
+            cartDiv.append( '<p>' + qty + ': ' + cart[item].name +
+                    ' $' + price.toFixed(2) + ' == $' +
+                    subtotal.toFixed(2) + '</p>');
+
+        }
+        cartDiv.append( '<p>Grand Total: $' + grandTotal.toFixed(2) + '</p>')
+    }
+
+    $(document).ready(function(){
+        // Add a buy button to each of my products
+
+        $('div[data-product]').each( function(){
+            $(this).append('<button class="btnCart">Add To Cart</button>');
+        })
+
+        $('.btnCart').on("click", function(event){
+            var pid = $(this).parent().parent().data("product");
+            console.log( pid );
+            if( cart[pid] ){
+                cart[pid].qty += 1;
+            } else {
+                cart[pid] = new Object();
+                cart[pid].qty = 1;
+                cart[pid].pid = pid;
+                cart[pid].name = $(this).parent().siblings("span").data("name");
+                cart[pid].price = $(this).parent().siblings("span").next().data("price");
+            }
+            displayCart();
+        })
+
+        $('#buy').on("click", function(event){
+            var buyUrl = "";
+            for( var item in cart ){
+                buyUrl += "&pid[]=" + item + "&qty[]=" + cart[item].qty;
+            }
+            $.getJSON( 'buy.php?' + buyUrl, function(data){
+                $("#cartDiv").append(data);
+            })
+            console.log( "http://cis230.cis1scc.com/buy.php?" + buyUrl);
+            $("#buy").parent().hide();
+        })
+
+        $('#saveOrder').on("click", function(event){
+            var cartStr = "[";
+            for( var item in cart ){
+                cartStr += JSON.stringify( cart[item] ) + ",";
+            }
+            cartStr = cartStr.slice(0,-1);
+            cartStr += "]";
+            console.log( cartStr );
+            localStorage['cart'] = cartStr;
+        })
+
+        $('#loadOrder').on("click", function(){
+            cart = [];
+            var obj = JSON.parse( localStorage['cart'] );
+            for( item in obj ){
+                pid = obj[item].pid;
+                cart[ pid ] = obj[item];
+            }
+            displayCart();
+        })
+    })
+</script>
+</body>
+</html>
